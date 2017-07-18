@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
@@ -12,10 +15,17 @@ namespace OESDataDownloader
     {
         public MainForm()
         {
-            UpdateConfiguration();
-            //LoadConfiguration();
-            //Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+            LoadConfiguration();
             InitializeComponent();
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            lbVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            UpdateConfiguration();
         }
         // Переключение локализации на русский
         private void btnLangRus_Click(object sender, EventArgs e)
@@ -38,26 +48,67 @@ namespace OESDataDownloader
             Controls.Clear();
             InitializeComponent();
         }
-        // Загрузка файла config для установки текущей культуры
+        // Загрузка файла setting для установки текущей культуры
         private void LoadConfiguration()
         {
             if (File.Exists("setting.xml"))
             {
                 XDocument xDoc = XDocument.Load("setting.xml");
+                XElement xLang = xDoc.Descendants("Language").First();
+                ChooseLanguage(xLang.Value);
             }
             else
             {
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo(CultureInfo.CurrentCulture.Name);
+                ChooseLanguage(CultureInfo.CurrentCulture.Name);
+            }
+        }
+        //Выбор текущего языка
+        private void ChooseLanguage(string lang)
+        {
+            switch (lang)
+            {
+                case "ru-RU":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+                    break;
+                case "ru-BY":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-RU");
+                    break;
+                case "en-US":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("en-US");
+                    break;
+                case "fr-FR":
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fr-FR");
+                    break;
+                default:
+                    Thread.CurrentThread.CurrentUICulture = new CultureInfo("ru-BY");
+                    break;
             }
         }
 
         private void UpdateConfiguration()
         {
-            XDocument xDoc = new XDocument();
-            XElement xEl = new XElement(this.Text);
-            XAttribute xAt = new XAttribute("language", Thread.CurrentThread.CurrentUICulture);
-            xEl.Add(xAt);
-            xDoc.Save("setting.xml");
+            XmlTextWriter writer = new XmlTextWriter("setting.xml", Encoding.UTF8);
+            writer.WriteStartDocument();
+            writer.WriteStartElement("xml");
+            writer.WriteEndElement();
+            writer.Close();
+
+            XmlDocument doc = new XmlDocument();
+            doc.Load("setting.xml");
+            XmlNode element = doc.CreateElement("OESDataDownloader");
+            doc.DocumentElement?.AppendChild(element);
+
+            XmlNode languageEl = doc.CreateElement("Language"); // даём имя
+            languageEl.InnerText = Thread.CurrentThread.CurrentUICulture.ToString(); // и значение
+            element.AppendChild(languageEl); // и указываем кому принадлежит
+
+            doc.Save("setting.xml");
+        }
+
+        private void btnProp_Click(object sender, EventArgs e)
+        {
+            DownloadingForm f = new DownloadingForm();
+            f.Show();
         }
     }
 }

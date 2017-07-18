@@ -41,6 +41,8 @@
             this.tbOperationsPerformed = new System.Windows.Forms.TextBox();
             this.gbSavedFiles = new System.Windows.Forms.GroupBox();
             this.tbSavedFiles = new System.Windows.Forms.TextBox();
+            this.lbSavedFilePath = new System.Windows.Forms.Label();
+            this.lbVersion = new System.Windows.Forms.Label();
             this.btnLangRus = new System.Windows.Forms.Button();
             this.btnLangFr = new System.Windows.Forms.Button();
             this.btnLangEng = new System.Windows.Forms.Button();
@@ -52,22 +54,22 @@
             // 
             // btnIndicEthernet
             // 
-            resources.ApplyResources(this.btnIndicEthernet, "btnIndicEthernet");
             this.btnIndicEthernet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnIndicEthernet, "btnIndicEthernet");
             this.btnIndicEthernet.Name = "btnIndicEthernet";
             this.btnIndicEthernet.UseVisualStyleBackColor = false;
             // 
             // btnIndicUSB
             // 
-            resources.ApplyResources(this.btnIndicUSB, "btnIndicUSB");
             this.btnIndicUSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnIndicUSB, "btnIndicUSB");
             this.btnIndicUSB.Name = "btnIndicUSB";
             this.btnIndicUSB.UseVisualStyleBackColor = false;
             // 
             // btnIndicConnection
             // 
-            resources.ApplyResources(this.btnIndicConnection, "btnIndicConnection");
             this.btnIndicConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnIndicConnection, "btnIndicConnection");
             this.btnIndicConnection.Name = "btnIndicConnection";
             this.btnIndicConnection.UseVisualStyleBackColor = false;
             // 
@@ -91,8 +93,8 @@
             // 
             // gbLaunchInfo
             // 
-            resources.ApplyResources(this.gbLaunchInfo, "gbLaunchInfo");
             this.gbLaunchInfo.Controls.Add(this.tbLauchInfo);
+            resources.ApplyResources(this.gbLaunchInfo, "gbLaunchInfo");
             this.gbLaunchInfo.Name = "gbLaunchInfo";
             this.gbLaunchInfo.TabStop = false;
             // 
@@ -103,8 +105,8 @@
             // 
             // gbOperationsPerformed
             // 
-            resources.ApplyResources(this.gbOperationsPerformed, "gbOperationsPerformed");
             this.gbOperationsPerformed.Controls.Add(this.tbOperationsPerformed);
+            resources.ApplyResources(this.gbOperationsPerformed, "gbOperationsPerformed");
             this.gbOperationsPerformed.Name = "gbOperationsPerformed";
             this.gbOperationsPerformed.TabStop = false;
             // 
@@ -115,8 +117,8 @@
             // 
             // gbSavedFiles
             // 
-            resources.ApplyResources(this.gbSavedFiles, "gbSavedFiles");
             this.gbSavedFiles.Controls.Add(this.tbSavedFiles);
+            resources.ApplyResources(this.gbSavedFiles, "gbSavedFiles");
             this.gbSavedFiles.Name = "gbSavedFiles";
             this.gbSavedFiles.TabStop = false;
             // 
@@ -125,8 +127,19 @@
             resources.ApplyResources(this.tbSavedFiles, "tbSavedFiles");
             this.tbSavedFiles.Name = "tbSavedFiles";
             // 
+            // lbSavedFilePath
+            // 
+            resources.ApplyResources(this.lbSavedFilePath, "lbSavedFilePath");
+            this.lbSavedFilePath.Name = "lbSavedFilePath";
+            // 
+            // lbVersion
+            // 
+            resources.ApplyResources(this.lbVersion, "lbVersion");
+            this.lbVersion.Name = "lbVersion";
+            // 
             // btnLangRus
             // 
+            this.btnLangRus.BackgroundImage = global::OESDataDownloader.Properties.Resources.download;
             resources.ApplyResources(this.btnLangRus, "btnLangRus");
             this.btnLangRus.Name = "btnLangRus";
             this.btnLangRus.UseVisualStyleBackColor = true;
@@ -134,6 +147,7 @@
             // 
             // btnLangFr
             // 
+            this.btnLangFr.BackgroundImage = global::OESDataDownloader.Properties.Resources.Flag_of_France_svg;
             resources.ApplyResources(this.btnLangFr, "btnLangFr");
             this.btnLangFr.Name = "btnLangFr";
             this.btnLangFr.UseVisualStyleBackColor = true;
@@ -141,6 +155,7 @@
             // 
             // btnLangEng
             // 
+            this.btnLangEng.BackgroundImage = global::OESDataDownloader.Properties.Resources._5035f86647d206_31869991;
             resources.ApplyResources(this.btnLangEng, "btnLangEng");
             this.btnLangEng.Name = "btnLangEng";
             this.btnLangEng.UseVisualStyleBackColor = true;
@@ -151,11 +166,14 @@
             resources.ApplyResources(this.btnProp, "btnProp");
             this.btnProp.Name = "btnProp";
             this.btnProp.UseVisualStyleBackColor = true;
+            this.btnProp.Click += new System.EventHandler(this.btnProp_Click);
             // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbVersion);
+            this.Controls.Add(this.lbSavedFilePath);
             this.Controls.Add(this.gbSavedFiles);
             this.Controls.Add(this.gbOperationsPerformed);
             this.Controls.Add(this.gbLaunchInfo);
@@ -172,6 +190,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "MainForm";
             this.ShowIcon = false;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbLaunchInfo.ResumeLayout(false);
             this.gbLaunchInfo.PerformLayout();
             this.gbOperationsPerformed.ResumeLayout(false);
@@ -179,6 +199,7 @@
             this.gbSavedFiles.ResumeLayout(false);
             this.gbSavedFiles.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -200,6 +221,8 @@
         private System.Windows.Forms.TextBox tbLauchInfo;
         private System.Windows.Forms.TextBox tbOperationsPerformed;
         private System.Windows.Forms.TextBox tbSavedFiles;
+        private System.Windows.Forms.Label lbSavedFilePath;
+        private System.Windows.Forms.Label lbVersion;
     }
 }
 

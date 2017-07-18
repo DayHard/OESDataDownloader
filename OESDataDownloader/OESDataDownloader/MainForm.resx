@@ -117,386 +117,491 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnIndicEthernet.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="btnLangEng.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="gbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 452</value>
-  </data>
-  <data name="&gt;&gt;btnFormat.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="gbLaunchInfo.Text" xml:space="preserve">
-    <value>Информация о пусках</value>
-  </data>
-  <data name="btnProp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 30</value>
-  </data>
-  <data name="&gt;&gt;btnLangFr.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnIndicUSB.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnIndicEthernet.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="&gt;&gt;gbSavedFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnIndicEthernet.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="btnIndicUSB.Text" xml:space="preserve">
-    <value>Наличие соединения по USB</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnProp.Location" type="System.Drawing.Point, System.Drawing">
-    <value>868, 615</value>
-  </data>
-  <data name="btnIndicConnection.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 23</value>
-  </data>
-  <data name="btnLangEng.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 30</value>
-  </data>
-  <data name="&gt;&gt;btnLangEng.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
-    <value>btnSave</value>
-  </data>
-  <data name="btnLangRus.Location" type="System.Drawing.Point, System.Drawing">
-    <value>732, 615</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="gbSavedFiles.Text" xml:space="preserve">
-    <value>Сохраненные файлы</value>
-  </data>
-  <data name="&gt;&gt;btnIndicEthernet.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="tbLauchInfo.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnIndicConnection.ZOrder" xml:space="preserve">
-    <value>10</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnIndicEthernet.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
   </data>
   <data name="btnIndicEthernet.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 23</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>920, 657</value>
-  </data>
-  <data name="btnIndicConnection.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnIndicUSB.Name" xml:space="preserve">
-    <value>btnIndicUSB</value>
-  </data>
-  <data name="btnLangEng.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnIndicUSB.Location" type="System.Drawing.Point, System.Drawing">
-    <value>307, 12</value>
-  </data>
-  <data name="gbOperationsPerformed.Text" xml:space="preserve">
-    <value>Выполняемые операции</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>OESDataDownloader</value>
-  </data>
   <data name="btnIndicEthernet.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnProp.Name" xml:space="preserve">
-    <value>btnProp</value>
-  </data>
-  <data name="btnFormat.Text" xml:space="preserve">
-    <value>Форматировать</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;gbLaunchInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Parent" xml:space="preserve">
-    <value>gbOperationsPerformed</value>
-  </data>
-  <data name="&gt;&gt;btnIndicConnection.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="tbSavedFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;tbSavedFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnIndicEthernet.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="&gt;&gt;btnLangRus.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnLangFr.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;btnIndicEthernet.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;btnProp.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnIndicUSB.Size" type="System.Drawing.Size, System.Drawing">
-    <value>300, 23</value>
-  </data>
-  <data name="btnLangFr.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;gbOperationsPerformed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="gbSavedFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 405</value>
-  </data>
-  <data name="btnLangRus.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="tbLauchInfo.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnLangFr.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="gbLaunchInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>12</value>
-  </data>
-  <data name="btnDeleteAll.Location" type="System.Drawing.Point, System.Drawing">
-    <value>357, 615</value>
-  </data>
-  <data name="tbLauchInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="&gt;&gt;gbOperationsPerformed.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="tbOperationsPerformed.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="gbLaunchInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>440, 405</value>
-  </data>
-  <data name="tbSavedFiles.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="tbLauchInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="gbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 41</value>
-  </data>
-  <data name="&gt;&gt;gbLaunchInfo.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;btnIndicUSB.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
-  </data>
-  <data name="btnIndicUSB.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="gbLaunchInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>468, 41</value>
-  </data>
-  <data name="btnFormat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>463, 615</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteAll.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="gbOperationsPerformed.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;gbOperationsPerformed.Name" xml:space="preserve">
-    <value>gbOperationsPerformed</value>
-  </data>
-  <data name="btnIndicConnection.Text" xml:space="preserve">
-    <value>Наличие связи с ОЭД</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Parent" xml:space="preserve">
-    <value>gbLaunchInfo</value>
-  </data>
-  <data name="&gt;&gt;btnProp.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnProp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnLangFr.Location" type="System.Drawing.Point, System.Drawing">
-    <value>773, 615</value>
-  </data>
-  <data name="&gt;&gt;gbOperationsPerformed.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnDeleteAll.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;btnIndicUSB.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLangFr.Name" xml:space="preserve">
-    <value>btnLangFr</value>
-  </data>
-  <data name="&gt;&gt;gbSavedFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnLangEng.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
   </data>
   <data name="btnIndicEthernet.Text" xml:space="preserve">
     <value>Наличие соединения по Ethernet</value>
   </data>
-  <data name="btnLangFr.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="&gt;&gt;btnIndicEthernet.Name" xml:space="preserve">
+    <value>btnIndicEthernet</value>
   </data>
-  <data name="btnIndicEthernet.Enabled" type="System.Boolean, mscorlib">
+  <data name="&gt;&gt;btnIndicEthernet.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnIndicEthernet.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnIndicEthernet.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="btnIndicUSB.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnProp.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="btnIndicUSB.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Popup</value>
   </data>
-  <data name="btnProp.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+  <data name="btnIndicUSB.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="tbSavedFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="btnIndicUSB.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 12</value>
   </data>
-  <data name="tbOperationsPerformed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="btnIndicUSB.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 23</value>
   </data>
-  <data name="tbOperationsPerformed.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnIndicUSB.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tbOperationsPerformed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 125</value>
+  <data name="btnIndicUSB.Text" xml:space="preserve">
+    <value>Наличие соединения по USB</value>
   </data>
-  <data name="&gt;&gt;tbSavedFiles.Name" xml:space="preserve">
-    <value>tbSavedFiles</value>
+  <data name="&gt;&gt;btnIndicUSB.Name" xml:space="preserve">
+    <value>btnIndicUSB</value>
+  </data>
+  <data name="&gt;&gt;btnIndicUSB.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnIndicUSB.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnIndicUSB.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="btnIndicConnection.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="btnIndicConnection.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Сохранить</value>
+  <data name="btnIndicConnection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="gbOperationsPerformed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>896, 144</value>
+  <data name="btnIndicConnection.Location" type="System.Drawing.Point, System.Drawing">
+    <value>603, 12</value>
   </data>
-  <data name="&gt;&gt;btnLangRus.Type" xml:space="preserve">
+  <data name="btnIndicConnection.Size" type="System.Drawing.Size, System.Drawing">
+    <value>300, 23</value>
+  </data>
+  <data name="btnIndicConnection.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnIndicConnection.Text" xml:space="preserve">
+    <value>Наличие связи с ОЭД</value>
+  </data>
+  <data name="&gt;&gt;btnIndicConnection.Name" xml:space="preserve">
+    <value>btnIndicConnection</value>
+  </data>
+  <data name="&gt;&gt;btnIndicConnection.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnIndicConnection.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="gbSavedFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;btnIndicConnection.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
-  <data name="&gt;&gt;tbSavedFiles.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;btnIndicEthernet.Name" xml:space="preserve">
-    <value>btnIndicEthernet</value>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>251, 629</value>
   </data>
-  <data name="&gt;&gt;gbSavedFiles.Name" xml:space="preserve">
-    <value>gbSavedFiles</value>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 30</value>
+  </data>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnDeleteAll.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnDeleteAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>357, 629</value>
   </data>
   <data name="btnDeleteAll.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 30</value>
   </data>
-  <data name="&gt;&gt;btnIndicUSB.ZOrder" xml:space="preserve">
-    <value>11</value>
+  <data name="btnDeleteAll.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
   </data>
-  <data name="&gt;&gt;gbSavedFiles.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Name" xml:space="preserve">
-    <value>tbLauchInfo</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Name" xml:space="preserve">
-    <value>tbOperationsPerformed</value>
-  </data>
-  <data name="btnFormat.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="tbLauchInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="&gt;&gt;tbSavedFiles.Parent" xml:space="preserve">
-    <value>gbSavedFiles</value>
-  </data>
-  <data name="btnLangEng.Location" type="System.Drawing.Point, System.Drawing">
-    <value>814, 615</value>
-  </data>
-  <data name="tbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="&gt;&gt;btnDeleteAll.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="tbOperationsPerformed.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>251, 615</value>
-  </data>
-  <data name="tbSavedFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 386</value>
-  </data>
-  <data name="tbSavedFiles.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;btnLangRus.Name" xml:space="preserve">
-    <value>btnLangRus</value>
-  </data>
-  <data name="btnIndicConnection.Location" type="System.Drawing.Point, System.Drawing">
-    <value>603, 12</value>
+  <data name="btnDeleteAll.Text" xml:space="preserve">
+    <value>Удалить всё</value>
   </data>
   <data name="&gt;&gt;btnDeleteAll.Name" xml:space="preserve">
     <value>btnDeleteAll</value>
   </data>
-  <data name="&gt;&gt;btnIndicConnection.Name" xml:space="preserve">
-    <value>btnIndicConnection</value>
+  <data name="&gt;&gt;btnDeleteAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteAll.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteAll.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnFormat.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnFormat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>463, 629</value>
+  </data>
+  <data name="btnFormat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 30</value>
+  </data>
+  <data name="btnFormat.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="btnFormat.Text" xml:space="preserve">
+    <value>Форматировать</value>
+  </data>
+  <data name="&gt;&gt;btnFormat.Name" xml:space="preserve">
+    <value>btnFormat</value>
+  </data>
+  <data name="&gt;&gt;btnFormat.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnFormat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnFormat.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="tbLauchInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tbLauchInfo.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbLauchInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="tbLauchInfo.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbLauchInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 386</value>
+  </data>
+  <data name="tbLauchInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbLauchInfo.Name" xml:space="preserve">
+    <value>tbLauchInfo</value>
+  </data>
+  <data name="&gt;&gt;tbLauchInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbLauchInfo.Parent" xml:space="preserve">
+    <value>gbLaunchInfo</value>
+  </data>
+  <data name="&gt;&gt;tbLauchInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbLaunchInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>468, 41</value>
+  </data>
+  <data name="gbLaunchInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 405</value>
+  </data>
+  <data name="gbLaunchInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="gbLaunchInfo.Text" xml:space="preserve">
+    <value>Информация о пусках</value>
+  </data>
+  <data name="&gt;&gt;gbLaunchInfo.Name" xml:space="preserve">
+    <value>gbLaunchInfo</value>
+  </data>
+  <data name="&gt;&gt;gbLaunchInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbLaunchInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbLaunchInfo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tbOperationsPerformed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tbOperationsPerformed.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="tbOperationsPerformed.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbOperationsPerformed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>890, 125</value>
+  </data>
+  <data name="tbOperationsPerformed.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tbOperationsPerformed.Name" xml:space="preserve">
+    <value>tbOperationsPerformed</value>
+  </data>
+  <data name="&gt;&gt;tbOperationsPerformed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbOperationsPerformed.Parent" xml:space="preserve">
+    <value>gbOperationsPerformed</value>
+  </data>
+  <data name="&gt;&gt;tbOperationsPerformed.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 452</value>
+  </data>
+  <data name="gbOperationsPerformed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>896, 144</value>
+  </data>
+  <data name="gbOperationsPerformed.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="gbOperationsPerformed.Text" xml:space="preserve">
+    <value>Выполняемые операции</value>
+  </data>
+  <data name="&gt;&gt;gbOperationsPerformed.Name" xml:space="preserve">
+    <value>gbOperationsPerformed</value>
+  </data>
+  <data name="&gt;&gt;gbOperationsPerformed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbOperationsPerformed.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbOperationsPerformed.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="tbSavedFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="tbSavedFiles.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="tbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="tbSavedFiles.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="tbSavedFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 386</value>
+  </data>
+  <data name="tbSavedFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tbSavedFiles.Name" xml:space="preserve">
+    <value>tbSavedFiles</value>
+  </data>
+  <data name="&gt;&gt;tbSavedFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tbSavedFiles.Parent" xml:space="preserve">
+    <value>gbSavedFiles</value>
+  </data>
+  <data name="&gt;&gt;tbSavedFiles.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 41</value>
+  </data>
+  <data name="gbSavedFiles.Size" type="System.Drawing.Size, System.Drawing">
+    <value>440, 405</value>
+  </data>
+  <data name="gbSavedFiles.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="gbSavedFiles.Text" xml:space="preserve">
+    <value>Сохраненные файлы</value>
+  </data>
+  <data name="&gt;&gt;gbSavedFiles.Name" xml:space="preserve">
+    <value>gbSavedFiles</value>
+  </data>
+  <data name="&gt;&gt;gbSavedFiles.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbSavedFiles.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbSavedFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbSavedFilePath.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbSavedFilePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbSavedFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 600</value>
+  </data>
+  <data name="lbSavedFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 13</value>
+  </data>
+  <data name="lbSavedFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="lbSavedFilePath.Text" xml:space="preserve">
+    <value>Расположение сохраняемых файлов: </value>
+  </data>
+  <data name="&gt;&gt;lbSavedFilePath.Name" xml:space="preserve">
+    <value>lbSavedFilePath</value>
+  </data>
+  <data name="&gt;&gt;lbSavedFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbSavedFilePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbSavedFilePath.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lbVersion.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbVersion.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="lbVersion.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 665</value>
+  </data>
+  <data name="lbVersion.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 13</value>
+  </data>
+  <data name="lbVersion.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="lbVersion.Text" xml:space="preserve">
+    <value>0.0.0.0</value>
+  </data>
+  <data name="&gt;&gt;lbVersion.Name" xml:space="preserve">
+    <value>lbVersion</value>
+  </data>
+  <data name="&gt;&gt;lbVersion.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbVersion.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbVersion.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnLangRus.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="btnLangRus.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLangRus.Location" type="System.Drawing.Point, System.Drawing">
+    <value>732, 629</value>
+  </data>
+  <data name="btnLangRus.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 30</value>
+  </data>
+  <data name="btnLangRus.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnLangRus.Name" xml:space="preserve">
+    <value>btnLangRus</value>
+  </data>
+  <data name="&gt;&gt;btnLangRus.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLangRus.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLangRus.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="btnLangFr.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="btnLangFr.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLangFr.Location" type="System.Drawing.Point, System.Drawing">
+    <value>773, 629</value>
+  </data>
+  <data name="btnLangFr.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 30</value>
+  </data>
+  <data name="btnLangFr.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;btnLangFr.Name" xml:space="preserve">
+    <value>btnLangFr</value>
+  </data>
+  <data name="&gt;&gt;btnLangFr.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLangFr.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLangFr.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="btnLangEng.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="btnLangEng.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnLangEng.Location" type="System.Drawing.Point, System.Drawing">
+    <value>814, 629</value>
+  </data>
+  <data name="btnLangEng.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 30</value>
+  </data>
+  <data name="btnLangEng.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;btnLangEng.Name" xml:space="preserve">
+    <value>btnLangEng</value>
+  </data>
+  <data name="&gt;&gt;btnLangEng.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLangEng.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnLangEng.ZOrder" xml:space="preserve">
+    <value>10</value>
   </data>
   <data name="btnProp.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -524,67 +629,49 @@
         bxFMdNuwYx7YxRXP2LXJ0+3WNwUjjWJSxwSFG3J/KigD/9k=
 </value>
   </data>
-  <data name="btnFormat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 30</value>
+  <data name="btnProp.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
-  <data name="btnLangFr.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnProp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnProp.Location" type="System.Drawing.Point, System.Drawing">
+    <value>868, 629</value>
+  </data>
+  <data name="btnProp.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 30</value>
   </data>
-  <data name="btnIndicEthernet.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Popup</value>
+  <data name="btnProp.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;btnFormat.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="&gt;&gt;btnProp.Name" xml:space="preserve">
+    <value>btnProp</value>
   </data>
-  <data name="&gt;&gt;btnLangRus.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;btnLangEng.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnProp.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnIndicConnection.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="btnDeleteAll.Text" xml:space="preserve">
-    <value>Удалить всё</value>
-  </data>
-  <data name="tbLauchInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 386</value>
-  </data>
-  <data name="btnLangRus.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 30</value>
-  </data>
-  <data name="&gt;&gt;btnIndicEthernet.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnProp.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnFormat.Name" xml:space="preserve">
-    <value>btnFormat</value>
-  </data>
-  <data name="&gt;&gt;gbLaunchInfo.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;gbLaunchInfo.Name" xml:space="preserve">
-    <value>gbLaunchInfo</value>
-  </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 30</value>
-  </data>
-  <data name="&gt;&gt;btnFormat.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnIndicUSB.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;btnLangEng.Name" xml:space="preserve">
-    <value>btnLangEng</value>
-  </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;btnProp.ZOrder" xml:space="preserve">
+    <value>11</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>ru</value>
-  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>920, 687</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>OESDataDownloader</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
