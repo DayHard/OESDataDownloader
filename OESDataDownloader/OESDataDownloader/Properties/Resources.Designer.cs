@@ -63,9 +63,9 @@ namespace OESDataDownloader.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Flag_of_France {
+        internal static System.Drawing.Bitmap _4A3C44933C07ECB1C9FD0CBD4C855FECCE811520096F14A934_pimgpsh_thumbnail_win_distr {
             get {
-                object obj = ResourceManager.GetObject("Flag_of_France", resourceCulture);
+                object obj = ResourceManager.GetObject("_4A3C44933C07ECB1C9FD0CBD4C855FECCE811520096F14A934_pimgpsh_thumbnail_win_distr", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace OESDataDownloader.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Flag_Russia {
+        internal static System.Drawing.Bitmap _5035f86647d206_31869991 {
             get {
-                object obj = ResourceManager.GetObject("Flag_Russia", resourceCulture);
+                object obj = ResourceManager.GetObject("_5035f86647d206_31869991", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +83,9 @@ namespace OESDataDownloader.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Flag_UK {
+        internal static System.Drawing.Bitmap download {
             get {
-                object obj = ResourceManager.GetObject("Flag_UK", resourceCulture);
+                object obj = ResourceManager.GetObject("download", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -93,9 +93,9 @@ namespace OESDataDownloader.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Image_Setting {
+        internal static System.Drawing.Bitmap Flag_of_France_svg {
             get {
-                object obj = ResourceManager.GetObject("Image_Setting", resourceCulture);
+                object obj = ResourceManager.GetObject("Flag_of_France_svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

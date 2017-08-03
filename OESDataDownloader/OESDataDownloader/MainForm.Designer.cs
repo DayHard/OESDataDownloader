@@ -139,7 +139,7 @@
             // 
             // btnLangRus
             // 
-            this.btnLangRus.BackgroundImage = global::OESDataDownloader.Properties.Resources.Flag_Russia;
+            this.btnLangRus.BackgroundImage = global::OESDataDownloader.Properties.Resources.download;
             resources.ApplyResources(this.btnLangRus, "btnLangRus");
             this.btnLangRus.Name = "btnLangRus";
             this.btnLangRus.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             // 
             // btnLangFr
             // 
-            this.btnLangFr.BackgroundImage = global::OESDataDownloader.Properties.Resources.Flag_of_France;
+            this.btnLangFr.BackgroundImage = global::OESDataDownloader.Properties.Resources.Flag_of_France_svg;
             resources.ApplyResources(this.btnLangFr, "btnLangFr");
             this.btnLangFr.Name = "btnLangFr";
             this.btnLangFr.UseVisualStyleBackColor = true;
@@ -155,7 +155,7 @@
             // 
             // btnLangEng
             // 
-            this.btnLangEng.BackgroundImage = global::OESDataDownloader.Properties.Resources.Flag_UK;
+            this.btnLangEng.BackgroundImage = global::OESDataDownloader.Properties.Resources._5035f86647d206_31869991;
             resources.ApplyResources(this.btnLangEng, "btnLangEng");
             this.btnLangEng.Name = "btnLangEng";
             this.btnLangEng.UseVisualStyleBackColor = true;
