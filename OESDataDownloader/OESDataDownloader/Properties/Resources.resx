@@ -118,16 +118,16 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="download" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Flag_Russia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Flag_of_France_svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Flag_of_France" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Flag_of_France.svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_4A3C44933C07ECB1C9FD0CBD4C855FECCE811520096F14A934_pimgpsh_thumbnail_win_distr" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Image_Setting" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\^4A3C44933C07ECB1C9FD0CBD4C855FECCE811520096F14A934^pimgpsh_thumbnail_win_distr.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="_5035f86647d206_31869991" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Flag_UK" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5035f86647d206.31869991.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
