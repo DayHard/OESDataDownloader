@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
@@ -8,11 +9,14 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Xml;
 using System.Xml.Linq;
+using System.Net.NetworkInformation;
 
 namespace OESDataDownloader
 {
     public partial class MainForm : Form
     {
+        private static UARTForm uart = new UARTForm();
+        private bool OEDIsAvalible;
         public MainForm()
         {
             LoadConfiguration();
@@ -27,6 +31,7 @@ namespace OESDataDownloader
         {
             UpdateConfiguration();
         }
+        #region LanguageConfiguration
         // Переключение локализации на русский
         private void btnLangRus_Click(object sender, EventArgs e)
         {
@@ -104,11 +109,55 @@ namespace OESDataDownloader
 
             doc.Save("setting.xml");
         }
-
+        #endregion
         private void btnProp_Click(object sender, EventArgs e)
         {
             DownloadingForm f = new DownloadingForm();
             f.Show();
+        }
+
+        private void btnUART_Click(object sender, EventArgs e)
+        {
+            uart.Show();
+        }
+
+        private void timer_Update_LAN_Tick(object sender, EventArgs e)
+        {
+            //Проверка наличия локальной сети
+            if (NetworkInterface.GetIsNetworkAvailable())
+            {
+                btnIndicEthernet.BackColor = Color.GreenYellow;
+                //Проверка наличия USB соединения
+                if (false)
+                {
+                    btnIndicUSB.BackColor = Color.GreenYellow;
+                    //Проверка доступности ОЕД 
+                    if (true)
+                    {
+                        btnIndicConnection.BackColor = Color.GreenYellow;
+                        OEDIsAvalible = true;
+                    }
+                    else
+                    {
+                        OEDIsAvalible = false;
+                        btnIndicConnection.BackColor = Color.OrangeRed;
+                    }
+                }
+                else
+                {
+                    OEDIsAvalible = false;
+                    btnIndicUSB.BackColor = Color.OrangeRed;
+                    btnIndicConnection.BackColor = Color.OrangeRed;
+                }
+            }
+            else
+            {
+                OEDIsAvalible = false;
+                btnIndicEthernet.BackColor = Color.OrangeRed;
+                btnIndicUSB.BackColor = Color.OrangeRed;
+                btnIndicConnection.BackColor = Color.OrangeRed;
+            }
+
         }
     }
 }
