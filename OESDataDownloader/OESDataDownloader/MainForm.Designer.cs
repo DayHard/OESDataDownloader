@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnIndicEthernet = new System.Windows.Forms.Button();
             this.btnIndicUSB = new System.Windows.Forms.Button();
@@ -49,7 +48,6 @@
             this.btnLangEng = new System.Windows.Forms.Button();
             this.btnProp = new System.Windows.Forms.Button();
             this.btnUART = new System.Windows.Forms.Button();
-            this.timer_Update_LAN = new System.Windows.Forms.Timer(this.components);
             this.gbLaunchInfo.SuspendLayout();
             this.gbOperationsPerformed.SuspendLayout();
             this.gbSavedFiles.SuspendLayout();
@@ -178,12 +176,6 @@
             this.btnUART.UseVisualStyleBackColor = true;
             this.btnUART.Click += new System.EventHandler(this.btnUART_Click);
             // 
-            // timer_Update_LAN
-            // 
-            this.timer_Update_LAN.Enabled = true;
-            this.timer_Update_LAN.Interval = 1000;
-            this.timer_Update_LAN.Tick += new System.EventHandler(this.timer_Update_LAN_Tick);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -241,7 +233,6 @@
         private System.Windows.Forms.Label lbSavedFilePath;
         private System.Windows.Forms.Label lbVersion;
         private System.Windows.Forms.Button btnUART;
-        private System.Windows.Forms.Timer timer_Update_LAN;
     }
 }
 

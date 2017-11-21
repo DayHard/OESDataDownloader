@@ -737,9 +737,6 @@
   <data name="&gt;&gt;btnUART.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="timer_Update_LAN.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -754,12 +751,6 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>OESDataDownloader</value>
-  </data>
-  <data name="&gt;&gt;timer_Update_LAN.Name" xml:space="preserve">
-    <value>timer_Update_LAN</value>
-  </data>
-  <data name="&gt;&gt;timer_Update_LAN.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>MainForm</value>
