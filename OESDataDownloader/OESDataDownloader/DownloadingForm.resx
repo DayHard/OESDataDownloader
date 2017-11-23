@@ -118,35 +118,42 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
-    <value>190, 99</value>
+  <data name="pbDownloading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 52</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Downloading</value>
+  <data name="pbDownloading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>480, 23</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pbDownloading.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="btnAbort.Text" xml:space="preserve">
-    <value>Отмена</value>
+  <data name="&gt;&gt;pbDownloading.Name" xml:space="preserve">
+    <value>pbDownloading</value>
   </data>
-  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbDownload.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;pbDownloading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pbDownloading.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>DownloadingForm</value>
-  </data>
   <data name="&gt;&gt;pbDownloading.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="lbDownload.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbDownload.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 15pt, style=Bold</value>
+  </data>
+  <data name="lbDownload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>176, 9</value>
+  </data>
+  <data name="lbDownload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 24</value>
+  </data>
+  <data name="lbDownload.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="lbDownload.Text" xml:space="preserve">
     <value>Загрузка пусков:</value>
@@ -154,66 +161,59 @@
   <data name="&gt;&gt;lbDownload.Name" xml:space="preserve">
     <value>lbDownload</value>
   </data>
+  <data name="&gt;&gt;lbDownload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;lbDownload.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="lbDownload.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Calibri, 15pt, style=Bold</value>
+  <data name="&gt;&gt;lbDownload.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnAbort.Location" type="System.Drawing.Point, System.Drawing">
+    <value>190, 99</value>
+  </data>
+  <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 30</value>
+  </data>
+  <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnAbort.Text" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
+    <value>btnAbort</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>504, 141</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+    <value>CenterParent</value>
   </data>
-  <data name="pbDownloading.Size" type="System.Drawing.Size, System.Drawing">
-    <value>480, 23</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Downloading</value>
   </data>
-  <data name="&gt;&gt;btnAbort.Name" xml:space="preserve">
-    <value>btnAbort</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>DownloadingForm</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;lbDownload.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;pbDownloading.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ProgressBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="pbDownloading.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 52</value>
-  </data>
-  <data name="&gt;&gt;pbDownloading.Name" xml:space="preserve">
-    <value>pbDownloading</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbDownload.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="lbDownload.Size" type="System.Drawing.Size, System.Drawing">
-    <value>156, 24</value>
-  </data>
-  <data name="btnAbort.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 30</value>
-  </data>
-  <data name="lbDownload.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbDownload.Location" type="System.Drawing.Point, System.Drawing">
-    <value>176, 9</value>
-  </data>
-  <data name="pbDownloading.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;btnAbort.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnAbort.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

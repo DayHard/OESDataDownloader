@@ -154,7 +154,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnIndicEthernet.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>14</value>
   </data>
   <metadata name="btnIndicUSB.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -190,43 +190,40 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnIndicUSB.ZOrder" xml:space="preserve">
-    <value>14</value>
+    <value>13</value>
   </data>
-  <metadata name="btnIndicConnection.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnIndicConnection.Enabled" type="System.Boolean, mscorlib">
+  <data name="btnIndicOed.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="btnIndicConnection.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnIndicOed.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Popup</value>
   </data>
-  <data name="btnIndicConnection.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="btnIndicOed.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="btnIndicConnection.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="btnIndicOed.Location" type="System.Drawing.Point, System.Drawing">
     <value>603, 12</value>
   </data>
-  <data name="btnIndicConnection.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnIndicOed.Size" type="System.Drawing.Size, System.Drawing">
     <value>300, 23</value>
   </data>
-  <data name="btnIndicConnection.TabIndex" type="System.Int32, mscorlib">
+  <data name="btnIndicOed.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="btnIndicConnection.Text" xml:space="preserve">
+  <data name="btnIndicOed.Text" xml:space="preserve">
     <value>Наличие связи с ОЭД</value>
   </data>
-  <data name="&gt;&gt;btnIndicConnection.Name" xml:space="preserve">
-    <value>btnIndicConnection</value>
+  <data name="&gt;&gt;btnIndicOed.Name" xml:space="preserve">
+    <value>btnIndicOed</value>
   </data>
-  <data name="&gt;&gt;btnIndicConnection.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnIndicOed.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnIndicConnection.Parent" xml:space="preserve">
+  <data name="&gt;&gt;btnIndicOed.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;btnIndicConnection.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="&gt;&gt;btnIndicOed.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
   <metadata name="btnSave.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -256,7 +253,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <metadata name="btnDeleteAll.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -286,7 +283,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnDeleteAll.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <metadata name="btnFormat.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -316,42 +313,21 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnFormat.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <metadata name="gbLaunchInfo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="tbLauchInfo.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="tbLauchInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;listBLaunchInfo.Name" xml:space="preserve">
+    <value>listBLaunchInfo</value>
   </data>
-  <data name="tbLauchInfo.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;listBLaunchInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbLauchInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="tbLauchInfo.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbLauchInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 386</value>
-  </data>
-  <data name="tbLauchInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Name" xml:space="preserve">
-    <value>tbLauchInfo</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbLauchInfo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;listBLaunchInfo.Parent" xml:space="preserve">
     <value>gbLaunchInfo</value>
   </data>
-  <data name="&gt;&gt;tbLauchInfo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listBLaunchInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="gbLaunchInfo.Location" type="System.Drawing.Point, System.Drawing">
@@ -376,42 +352,48 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbLaunchInfo.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
+  </data>
+  <data name="listBLaunchInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listBLaunchInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="listBLaunchInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 386</value>
+  </data>
+  <data name="listBLaunchInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;listBLaunchInfo.Name" xml:space="preserve">
+    <value>listBLaunchInfo</value>
+  </data>
+  <data name="&gt;&gt;listBLaunchInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBLaunchInfo.Parent" xml:space="preserve">
+    <value>gbLaunchInfo</value>
+  </data>
+  <data name="&gt;&gt;listBLaunchInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="gbOperationsPerformed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="tbOperationsPerformed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="listBOpreationsPerfomed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <data name="tbOperationsPerformed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;listBOpreationsPerfomed.Name" xml:space="preserve">
+    <value>listBOpreationsPerfomed</value>
   </data>
-  <data name="tbOperationsPerformed.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;listBOpreationsPerfomed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="tbOperationsPerformed.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbOperationsPerformed.Size" type="System.Drawing.Size, System.Drawing">
-    <value>890, 125</value>
-  </data>
-  <data name="tbOperationsPerformed.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Name" xml:space="preserve">
-    <value>tbOperationsPerformed</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbOperationsPerformed.Parent" xml:space="preserve">
+  <data name="&gt;&gt;listBOpreationsPerfomed.Parent" xml:space="preserve">
     <value>gbOperationsPerformed</value>
   </data>
-  <data name="&gt;&gt;tbOperationsPerformed.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listBOpreationsPerfomed.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="gbOperationsPerformed.Location" type="System.Drawing.Point, System.Drawing">
@@ -436,42 +418,51 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbOperationsPerformed.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
+  </data>
+  <metadata name="listBOpreationsPerfomed.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="listBOpreationsPerfomed.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listBOpreationsPerfomed.HorizontalScrollbar" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="listBOpreationsPerfomed.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="listBOpreationsPerfomed.Size" type="System.Drawing.Size, System.Drawing">
+    <value>890, 125</value>
+  </data>
+  <data name="listBOpreationsPerfomed.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;listBOpreationsPerfomed.Name" xml:space="preserve">
+    <value>listBOpreationsPerfomed</value>
+  </data>
+  <data name="&gt;&gt;listBOpreationsPerfomed.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBOpreationsPerfomed.Parent" xml:space="preserve">
+    <value>gbOperationsPerformed</value>
+  </data>
+  <data name="&gt;&gt;listBOpreationsPerfomed.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="gbSavedFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="tbSavedFiles.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="tbSavedFiles.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="&gt;&gt;listBSavedInfo.Name" xml:space="preserve">
+    <value>listBSavedInfo</value>
   </data>
-  <data name="tbSavedFiles.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;listBSavedInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 16</value>
-  </data>
-  <data name="tbSavedFiles.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="tbSavedFiles.Size" type="System.Drawing.Size, System.Drawing">
-    <value>434, 386</value>
-  </data>
-  <data name="tbSavedFiles.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;tbSavedFiles.Name" xml:space="preserve">
-    <value>tbSavedFiles</value>
-  </data>
-  <data name="&gt;&gt;tbSavedFiles.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tbSavedFiles.Parent" xml:space="preserve">
+  <data name="&gt;&gt;listBSavedInfo.Parent" xml:space="preserve">
     <value>gbSavedFiles</value>
   </data>
-  <data name="&gt;&gt;tbSavedFiles.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;listBSavedInfo.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="gbSavedFiles.Location" type="System.Drawing.Point, System.Drawing">
@@ -496,7 +487,31 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;gbSavedFiles.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="listBSavedInfo.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="listBSavedInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 16</value>
+  </data>
+  <data name="listBSavedInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>434, 386</value>
+  </data>
+  <data name="listBSavedInfo.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
+  </data>
+  <data name="&gt;&gt;listBSavedInfo.Name" xml:space="preserve">
+    <value>listBSavedInfo</value>
+  </data>
+  <data name="&gt;&gt;listBSavedInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;listBSavedInfo.Parent" xml:space="preserve">
+    <value>gbSavedFiles</value>
+  </data>
+  <data name="&gt;&gt;listBSavedInfo.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="lbSavedFilePath.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -529,7 +544,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbSavedFilePath.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>1</value>
   </data>
   <metadata name="lbVersion.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -562,7 +577,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;lbVersion.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>0</value>
   </data>
   <metadata name="btnLangRus.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -592,7 +607,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLangRus.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <metadata name="btnLangFr.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -622,7 +637,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLangFr.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <metadata name="btnLangEng.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -652,7 +667,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnLangEng.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>10</value>
   </data>
   <metadata name="btnProp.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -708,34 +723,7 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;btnProp.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <metadata name="btnUART.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="btnUART.Location" type="System.Drawing.Point, System.Drawing">
-    <value>828, 660</value>
-  </data>
-  <data name="btnUART.Size" type="System.Drawing.Size, System.Drawing">
-    <value>75, 23</value>
-  </data>
-  <data name="btnUART.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="btnUART.Text" xml:space="preserve">
-    <value>UART</value>
-  </data>
-  <data name="&gt;&gt;btnUART.Name" xml:space="preserve">
-    <value>btnUART</value>
-  </data>
-  <data name="&gt;&gt;btnUART.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUART.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;btnUART.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>11</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -31,23 +31,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnIndicEthernet = new System.Windows.Forms.Button();
             this.btnIndicUSB = new System.Windows.Forms.Button();
-            this.btnIndicConnection = new System.Windows.Forms.Button();
+            this.btnIndicOed = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnDeleteAll = new System.Windows.Forms.Button();
             this.btnFormat = new System.Windows.Forms.Button();
             this.gbLaunchInfo = new System.Windows.Forms.GroupBox();
-            this.tbLauchInfo = new System.Windows.Forms.TextBox();
+            this.listBLaunchInfo = new System.Windows.Forms.ListBox();
             this.gbOperationsPerformed = new System.Windows.Forms.GroupBox();
-            this.tbOperationsPerformed = new System.Windows.Forms.TextBox();
+            this.listBOpreationsPerfomed = new System.Windows.Forms.ListBox();
             this.gbSavedFiles = new System.Windows.Forms.GroupBox();
-            this.tbSavedFiles = new System.Windows.Forms.TextBox();
+            this.listBSavedInfo = new System.Windows.Forms.ListBox();
             this.lbSavedFilePath = new System.Windows.Forms.Label();
             this.lbVersion = new System.Windows.Forms.Label();
             this.btnLangRus = new System.Windows.Forms.Button();
             this.btnLangFr = new System.Windows.Forms.Button();
             this.btnLangEng = new System.Windows.Forms.Button();
             this.btnProp = new System.Windows.Forms.Button();
-            this.btnUART = new System.Windows.Forms.Button();
             this.gbLaunchInfo.SuspendLayout();
             this.gbOperationsPerformed.SuspendLayout();
             this.gbSavedFiles.SuspendLayout();
@@ -67,18 +66,19 @@
             this.btnIndicUSB.Name = "btnIndicUSB";
             this.btnIndicUSB.UseVisualStyleBackColor = false;
             // 
-            // btnIndicConnection
+            // btnIndicOed
             // 
-            this.btnIndicConnection.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            resources.ApplyResources(this.btnIndicConnection, "btnIndicConnection");
-            this.btnIndicConnection.Name = "btnIndicConnection";
-            this.btnIndicConnection.UseVisualStyleBackColor = false;
+            this.btnIndicOed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            resources.ApplyResources(this.btnIndicOed, "btnIndicOed");
+            this.btnIndicOed.Name = "btnIndicOed";
+            this.btnIndicOed.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDeleteAll
             // 
@@ -94,39 +94,42 @@
             // 
             // gbLaunchInfo
             // 
-            this.gbLaunchInfo.Controls.Add(this.tbLauchInfo);
+            this.gbLaunchInfo.Controls.Add(this.listBLaunchInfo);
             resources.ApplyResources(this.gbLaunchInfo, "gbLaunchInfo");
             this.gbLaunchInfo.Name = "gbLaunchInfo";
             this.gbLaunchInfo.TabStop = false;
             // 
-            // tbLauchInfo
+            // listBLaunchInfo
             // 
-            resources.ApplyResources(this.tbLauchInfo, "tbLauchInfo");
-            this.tbLauchInfo.Name = "tbLauchInfo";
+            resources.ApplyResources(this.listBLaunchInfo, "listBLaunchInfo");
+            this.listBLaunchInfo.FormattingEnabled = true;
+            this.listBLaunchInfo.Name = "listBLaunchInfo";
             // 
             // gbOperationsPerformed
             // 
-            this.gbOperationsPerformed.Controls.Add(this.tbOperationsPerformed);
+            this.gbOperationsPerformed.Controls.Add(this.listBOpreationsPerfomed);
             resources.ApplyResources(this.gbOperationsPerformed, "gbOperationsPerformed");
             this.gbOperationsPerformed.Name = "gbOperationsPerformed";
             this.gbOperationsPerformed.TabStop = false;
             // 
-            // tbOperationsPerformed
+            // listBOpreationsPerfomed
             // 
-            resources.ApplyResources(this.tbOperationsPerformed, "tbOperationsPerformed");
-            this.tbOperationsPerformed.Name = "tbOperationsPerformed";
+            resources.ApplyResources(this.listBOpreationsPerfomed, "listBOpreationsPerfomed");
+            this.listBOpreationsPerfomed.FormattingEnabled = true;
+            this.listBOpreationsPerfomed.Name = "listBOpreationsPerfomed";
             // 
             // gbSavedFiles
             // 
-            this.gbSavedFiles.Controls.Add(this.tbSavedFiles);
+            this.gbSavedFiles.Controls.Add(this.listBSavedInfo);
             resources.ApplyResources(this.gbSavedFiles, "gbSavedFiles");
             this.gbSavedFiles.Name = "gbSavedFiles";
             this.gbSavedFiles.TabStop = false;
             // 
-            // tbSavedFiles
+            // listBSavedInfo
             // 
-            resources.ApplyResources(this.tbSavedFiles, "tbSavedFiles");
-            this.tbSavedFiles.Name = "tbSavedFiles";
+            resources.ApplyResources(this.listBSavedInfo, "listBSavedInfo");
+            this.listBSavedInfo.FormattingEnabled = true;
+            this.listBSavedInfo.Name = "listBSavedInfo";
             // 
             // lbSavedFilePath
             // 
@@ -169,18 +172,10 @@
             this.btnProp.UseVisualStyleBackColor = true;
             this.btnProp.Click += new System.EventHandler(this.btnProp_Click);
             // 
-            // btnUART
-            // 
-            resources.ApplyResources(this.btnUART, "btnUART");
-            this.btnUART.Name = "btnUART";
-            this.btnUART.UseVisualStyleBackColor = true;
-            this.btnUART.Click += new System.EventHandler(this.btnUART_Click);
-            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnUART);
             this.Controls.Add(this.lbVersion);
             this.Controls.Add(this.lbSavedFilePath);
             this.Controls.Add(this.gbSavedFiles);
@@ -193,7 +188,7 @@
             this.Controls.Add(this.btnLangFr);
             this.Controls.Add(this.btnLangEng);
             this.Controls.Add(this.btnProp);
-            this.Controls.Add(this.btnIndicConnection);
+            this.Controls.Add(this.btnIndicOed);
             this.Controls.Add(this.btnIndicUSB);
             this.Controls.Add(this.btnIndicEthernet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
@@ -202,11 +197,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.gbLaunchInfo.ResumeLayout(false);
-            this.gbLaunchInfo.PerformLayout();
             this.gbOperationsPerformed.ResumeLayout(false);
-            this.gbOperationsPerformed.PerformLayout();
             this.gbSavedFiles.ResumeLayout(false);
-            this.gbSavedFiles.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -216,7 +208,7 @@
 
         private System.Windows.Forms.Button btnIndicEthernet;
         private System.Windows.Forms.Button btnIndicUSB;
-        private System.Windows.Forms.Button btnIndicConnection;
+        private System.Windows.Forms.Button btnIndicOed;
         private System.Windows.Forms.Button btnProp;
         private System.Windows.Forms.Button btnLangEng;
         private System.Windows.Forms.Button btnLangFr;
@@ -227,12 +219,11 @@
         private System.Windows.Forms.GroupBox gbLaunchInfo;
         private System.Windows.Forms.GroupBox gbOperationsPerformed;
         private System.Windows.Forms.GroupBox gbSavedFiles;
-        private System.Windows.Forms.TextBox tbLauchInfo;
-        private System.Windows.Forms.TextBox tbOperationsPerformed;
-        private System.Windows.Forms.TextBox tbSavedFiles;
         private System.Windows.Forms.Label lbSavedFilePath;
         private System.Windows.Forms.Label lbVersion;
-        private System.Windows.Forms.Button btnUART;
+        private System.Windows.Forms.ListBox listBOpreationsPerfomed;
+        private System.Windows.Forms.ListBox listBLaunchInfo;
+        private System.Windows.Forms.ListBox listBSavedInfo;
     }
 }
 

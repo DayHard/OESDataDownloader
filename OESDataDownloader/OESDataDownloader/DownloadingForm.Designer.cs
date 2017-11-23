@@ -38,7 +38,6 @@
             // 
             resources.ApplyResources(this.pbDownloading, "pbDownloading");
             this.pbDownloading.Name = "pbDownloading";
-            this.pbDownloading.Value = 30;
             // 
             // lbDownload
             // 
@@ -71,9 +70,8 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ProgressBar pbDownloading;
         private System.Windows.Forms.Label lbDownload;
         private System.Windows.Forms.Button btnAbort;
+        public System.Windows.Forms.ProgressBar pbDownloading;
     }
 }
