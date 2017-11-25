@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -12,11 +13,14 @@ using System.Xml;
 using System.Xml.Linq;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Threading.Tasks;
 
 namespace OESDataDownloader
 {
     public partial class MainForm : Form
     {
+        #region Variable
+
         private DownloadingForm dForm = new DownloadingForm();
         private readonly Ping _ping;
         private readonly UdpClient _sender;
@@ -25,18 +29,19 @@ namespace OESDataDownloader
         private IPEndPoint _remoteIpEndPoint;
         private static string _remoteIp;
         private bool _oedIsAvaliable;
-   
 
-        //private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0 };
-        //private const int RemotePort = 3001;
-        private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0, 1 };
-        private const int RemotePort = 3000;
+
+        private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0 };
+        private const int RemotePort = 3001;
+        //private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0, 1 };
+        //private const int RemotePort = 3000;
         private const int TimeOut = 10;
         private const int LocalPort = 3000;
         private const int ConnectionRetry = 1000;
 
         private readonly int[] _launchSize = new int[15];
 
+        #endregion
         public MainForm()
         {
             LoadConfiguration();
@@ -46,7 +51,6 @@ namespace OESDataDownloader
             _sender = new UdpClient();
             _resiver = new UdpClient(LocalPort) {Client = {ReceiveTimeout = TimeOut}};
         }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
             lbVersion.Text = Assembly.GetExecutingAssembly().GetName().Version.ToString();
@@ -161,37 +165,13 @@ namespace OESDataDownloader
         {
             for (;;)
             {
-                if (CheckEthernet())
+                if (CheckEthernet() && CheckUsb() && CheckOed())
                 {
-                    btnIndicEthernet.BackColor = Color.GreenYellow;
-                    if (CheckUsb())
-                    {
-                        btnIndicUSB.BackColor = Color.GreenYellow;
-                        if (CheckOed())
-                        {
-                            btnIndicOed.BackColor = Color.GreenYellow;
-
-                            AddToOperationsPerfomed("Соединение с STM установлено.");
-                            AddToOperationsPerfomed("Соединение по USB установлено.");
-                            AddToOperationsPerfomed("Пуски считаны.");
-                            _oedIsAvaliable = true;
-                            break;
-                        }
-                        btnIndicOed.BackColor = Color.OrangeRed;
-                    }
-                    else
-                    {
-                        btnIndicUSB.BackColor = Color.OrangeRed;
-                        btnIndicOed.BackColor = Color.OrangeRed;
-                    }  
+                    //USE ONLY WITH INVOKE
+                    //btnSave.Enabled = btnDeleteAll.Enabled = btnFormat.Enabled = true;
+                    _oedIsAvaliable = true;
+                    break;
                 }
-                else
-                {
-                    btnIndicEthernet.BackColor = Color.OrangeRed;
-                    btnIndicUSB.BackColor = Color.OrangeRed;
-                    btnIndicOed.BackColor = Color.OrangeRed;
-                }
-
                 Thread.Sleep(ConnectionRetry);
             }
         }
@@ -203,12 +183,15 @@ namespace OESDataDownloader
             {
                 var pingReply = _ping.Send(_remoteIp, TimeOut);
                 if (pingReply != null && pingReply.Status == IPStatus.Success)
-                    return true;
+
+                btnIndicEthernet.BackColor = Color.GreenYellow;
+                return true;
             }
             catch (Exception ex)
             {
                 AddToOperationsPerfomed("Ошибка пинга STM: " + ex.Message);
             }
+            btnIndicEthernet.BackColor = Color.OrangeRed;
             return false;
         }
         //Проверка доступности STM
@@ -220,39 +203,55 @@ namespace OESDataDownloader
                 var resp = _resiver.Receive(ref _remoteIpEndPoint);
                 //Проверка доступности ОЕД 
                 if (resp[0] == 10 && resp[7] == 1)
+                {
+                    btnIndicUSB.BackColor = Color.GreenYellow;
                     return true;
+                }                   
             }
             catch (SocketException)
             {
                 AddToOperationsPerfomed("STM не вернул статус USB соединения. TimeOut.");
             }
+            btnIndicUSB.BackColor = Color.OrangeRed;
             return false;
         }
         //Проверка доступности ОЭД
         private bool CheckOed()
-        {          
+        {
             try
-            {                          
+            {
                 var data = GetAllLaunch();
-                if(ToLittleEndian(data, 5, 2) == 0x1506)
+                if (ToLittleEndian(data, 5, 2) == 0x1506)
                 {
                     for (int i = 1; i <= data[4]; i++)
                     {
                         _launchSize[i - 1] = ToLittleEndian(data, i * 7 + 3, 4);
-                        AddToLaunchInfo(data[i*7], ToLittleEndian(data, i * 7 + 1, 2), _launchSize[i - 1]);                        
+                        AddToLaunchInfo(data[i * 7], ToLittleEndian(data, i * 7 + 1, 2), _launchSize[i - 1]);
                     }
+
+                    AddToOperationsPerfomed("Соединение с STM установлено.");
+                    AddToOperationsPerfomed("Соединение по USB установлено.");
+                    AddToOperationsPerfomed("Пуски считаны.");
+                    AddToOperationsPerfomed("Номер прибора: "+ ToLittleEndian(data,0,4));
                     AddToOperationsPerfomed("Количество записанных пусков: " + data[4]);
-                    return true;
                 }
+                Thread.Sleep(2000);
+                var data2 = GetAllDiag();
+                AddToLaunchInfo(ToBigEndian(data2, 2, 2), ToBigEndian(data2,4,4));
+                AddToOperationsPerfomed("Количество записанных диагностик: " + ToBigEndian(data2, 2, 2));
+                btnIndicOed.BackColor = Color.GreenYellow;
+                return true;
             }
             catch (SocketException)
             {
                 AddToOperationsPerfomed("ОЕД не вернул список пусков. TimeOut.");
             }
+            btnIndicOed.BackColor = Color.OrangeRed;
             return false;
-        }        
+        }
         #endregion
 
+        #region AddToList     
         /// <summary>
         /// Служебное сообщение (использует Invoke)
         /// </summary>
@@ -275,8 +274,21 @@ namespace OESDataDownloader
         {
             Invoke(new MethodInvoker(delegate
             {
-            listBLaunchInfo.Items.Add(@"Пуск: " + launch + @" Количество пакетов: " + sizepack +@" Размер: " + size);
+            listBLaunchInfo.Items.Add(@"Пуск: " + launch + @" Количество пакетов: " + sizepack +@" Размер: " + size + " B");
             listBLaunchInfo.TopIndex = listBLaunchInfo.Items.Count - 1;
+            }));
+        }        
+        /// <summary>
+        /// Информация о диагностике (использует Invoke)
+        /// </summary>
+        /// <param name="sizediag">Количесвто диагностик</param>
+        /// <param name="size"> Размер диагностик в B</param>
+        private void AddToLaunchInfo(int sizediag, int size)
+        {
+            Invoke(new MethodInvoker(delegate
+            {
+                listBLaunchInfo.Items.Add(@"Количество диагностик: " + sizediag + @" Размер: " + size + " B");
+                listBLaunchInfo.TopIndex = listBLaunchInfo.Items.Count - 1;
             }));
         }
         /// <summary>
@@ -289,7 +301,9 @@ namespace OESDataDownloader
             {
                 listBSavedInfo.Items.Add("Пуск номер: " + index);
             }));
-        }
+        }        
+        #endregion
+
         /// <summary>
         /// Преобразование к порядку байтов Little Endian
         /// </summary>
@@ -307,6 +321,28 @@ namespace OESDataDownloader
             return arr.Select((t, i) => t << i * 8).Sum();
         }
         /// <summary>
+        /// Преобразование к порядку байтов Big Endian
+        /// </summary>
+        /// <param name="data">Массив</param>
+        /// <param name="poss">Положение 1 байта числа</param>
+        /// <param name="size">Размер числа в байтах</param>
+        /// <returns></returns>
+        private static int ToBigEndian(byte[] data, int poss, int size)
+        {
+            var arr = new byte[size];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = data[poss + i];
+            }
+            int result = 0;
+            for (int i = 0; i <arr.Length ; i++)
+            {
+                result |= arr[i] << 8*(size - 1 - i);
+            }
+            return result;
+        }
+
+        /// <summary>
         /// Сохранение выбранного пуска
         /// </summary>
         /// <param name="sender"></param>
@@ -317,15 +353,25 @@ namespace OESDataDownloader
             var index = listBLaunchInfo.SelectedIndex;
             if (index != -1)
             {
-                var data = GetLaunch(index);
-                using (var bw = new BinaryWriter(new FileStream(index + ".imi", FileMode.Create)))
+                dForm.lbBytesReceived.Text = @"0/" + _launchSize[index];
+                dForm.pbDownloading.Maximum = _launchSize[index];
+                dForm.Show();
+
+                Task.Factory.StartNew(() =>
                 {
-                    bw.Write(data);
-                }
-                AddToSavedInfo(index);
+                    var data = GetLaunch(index);
+                    using (var bw = new BinaryWriter(new FileStream(index + ".imi", FileMode.Create)))
+                    {
+                        bw.Write(data);
+                    }
+                    AddToSavedInfo(index);
+                });
             }
             else MessageBox.Show("Выберите пуск для скачивания!");
         }
+
+        #region ControlsCommands
+
         /// <summary>
         /// Отправка запроса на получение всех пусков из ОЕД
         /// </summary>
@@ -339,16 +385,58 @@ namespace OESDataDownloader
             request[4] = 2;
             request[7] = 5;
 
+            // Очистка буфера приема UDP
+            if (_resiver.Available > 1)
+            {
+                _resiver.Receive(ref _remoteIpEndPoint);
+            }
+
+
             _sender.Send(request, request.Length, _endPoint);
             var receivedData = _resiver.Receive(ref _remoteIpEndPoint);
 
             var data = new byte[128];
+            //Array.Copy(receivedData, 7, data, 0, receivedData.Length);
+
             for (int i = 0; i < receivedData.Length - 7; i++)
             {
                 data[i] = receivedData[i + 7];
             }
             return data;
         }
+
+        /// <summary>
+        /// Отправка запроса на получение информации о диагностике
+        /// </summary>
+        /// <returns>Ответ ОЭД</returns>
+        private byte[] GetAllDiag()
+        {
+            // Формирование команды получения всех пусков
+            var request = new byte[71];
+            request[0] = 12;// ОЭД
+            request[2] = 1;
+            request[4] = 1;
+            request[7] = 16;
+
+            // Очистка буфера приема UDP
+            if (_resiver.Available > 1)
+            {
+                _resiver.Receive(ref _remoteIpEndPoint);
+            }
+
+            _sender.Send(request, request.Length, _endPoint);
+            var receivedData = _resiver.Receive(ref _remoteIpEndPoint);
+
+            var data = new byte[128];
+            //Array.Copy(receivedData, 7, data, 0, data.Length);
+            //Array.Copy(rdata, 7, data, counter, rdata.Length);
+            for (int i = 0; i < receivedData.Length - 7; i++)
+            {
+                data[i] = receivedData[i + 7];
+            }
+            return data;
+        }
+
         /// <summary>
         /// Запрос на получение пуска
         /// </summary>
@@ -356,59 +444,82 @@ namespace OESDataDownloader
         /// <returns></returns>
         private byte[] GetLaunch(int number)
         {
-            dForm.Show();
-            dForm.pbDownloading.Maximum = _launchSize[number];
+            #region ArrayDefinitions
 
-            var request = new byte[71];
-            request[0] = 12;
-            request[2] = 1;
-            //request[4] = 16;
-            request[4] = 1;
-            request[7] = 6;
-            request[8] = (byte)number;
+            var req = new byte[71];
+            req[0] = 12;
+            //req[1] = 0;
+            req[2] = 1;
+            //req[3] = 0;
+            //req[4] = 0;
+            //req[5] = 0;
+            req[6] = 6;
+            req[7] = 6;
+            req[8] = (byte)number;
 
-            var request2 = new byte[7];
-            request2[0] = 12;
-            //request2[4] = 16;
-            request2[4] = 1;
+            var req2 = new byte[71];
+            req2[0] = 12;
+            //req2[1] = 0;
+            req2[2] = 1;
+            //req2[3] = 0;
+            //req2[4] = 0;
+            //req2[5] = 0;
+            req2[6] = 4;
+            req2[7] = 4;
 
+            var req3 = new byte[7];
+            req3[0] = 12;
+            //req3[1] = 0;
+            //req3[2] = 0;
+            //req3[3] = 0;
+            req3[4] = 16;
+            //req3[5] = 0;
+            req3[6] = 22;
+
+            var data = new byte[_launchSize[number]];
+            for (int i = 0; i < data.Length; i++)
+                data[i] = 0;
+
+            int counter = 0;
             _resiver.Client.ReceiveTimeout = 3000;
 
-            var responce = new byte[_launchSize[number]];
+            #endregion
 
-            try
+            _sender.Send(req, req.Length, _endPoint);
+            Thread.Sleep(5000);
+            do
             {
-                _sender.Send(request, request.Length, _endPoint);
-                var resp = _resiver.Receive(ref _remoteIpEndPoint);
-                for (int i = 0; i < resp.Length; i++)
-                {
-                    responce[i] = resp[i + 7];
-                }
+                _sender.Send(req2, req2.Length, _endPoint);
+                Thread.Sleep(1000);
 
-                var counter = resp.Length - 7;
-                dForm.pbDownloading.Step = counter;
-                dForm.pbDownloading.PerformStep();
-
-                while (counter > responce.Length)
+                for (int i = 0; i < 2; i++)
                 {
-                    _sender.Send(request2, request2.Length, _endPoint);
-                    var resp2 = _resiver.Receive(ref _remoteIpEndPoint);
-                    for (int i = 0; i < resp2.Length; i++)
+                    _sender.Send(req3, req3.Length, _endPoint);
+
+                   var rdata = _resiver.Receive(ref _remoteIpEndPoint);
+
+                    for (int j = 6; j < rdata.Length; j++)
                     {
-                        responce[counter] = resp2[i + 7];
+                        data[counter] = rdata[j];
                         counter++;
                     }
 
-                    dForm.pbDownloading.Step = counter;
-                    dForm.pbDownloading.PerformStep();
+                    //Array.Copy(rdata, 7, data, counter, rdata.Length);
+                    //Array.Copy(data,counter,rdata,7, rdata.Length);
+
+                    //counter += rdata.Length - 7;
+                    Invoke(new MethodInvoker(delegate
+                    {
+                        dForm.pbDownloading.Step = counter;
+                        dForm.pbDownloading.PerformStep();
+                        dForm.lbBytesReceived.Text = counter + @"/" + _launchSize[number];
+                    }));
+
                 }
-                dForm.Hide();
-            }
-            catch (SocketException)
-            {
-                AddToOperationsPerfomed("Нет входящих данных. TimeOut.");
-            }
-            return responce;
+            } while (_launchSize[number] < counter);
+            return data;
         }
+
+        #endregion
     }
 }

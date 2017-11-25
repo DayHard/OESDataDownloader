@@ -54,21 +54,21 @@
             // 
             // btnIndicEthernet
             // 
-            this.btnIndicEthernet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnIndicEthernet.BackColor = System.Drawing.Color.OrangeRed;
             resources.ApplyResources(this.btnIndicEthernet, "btnIndicEthernet");
             this.btnIndicEthernet.Name = "btnIndicEthernet";
             this.btnIndicEthernet.UseVisualStyleBackColor = false;
             // 
             // btnIndicUSB
             // 
-            this.btnIndicUSB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnIndicUSB.BackColor = System.Drawing.Color.OrangeRed;
             resources.ApplyResources(this.btnIndicUSB, "btnIndicUSB");
             this.btnIndicUSB.Name = "btnIndicUSB";
             this.btnIndicUSB.UseVisualStyleBackColor = false;
             // 
             // btnIndicOed
             // 
-            this.btnIndicOed.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnIndicOed.BackColor = System.Drawing.Color.OrangeRed;
             resources.ApplyResources(this.btnIndicOed, "btnIndicOed");
             this.btnIndicOed.Name = "btnIndicOed";
             this.btnIndicOed.UseVisualStyleBackColor = false;
@@ -192,6 +192,7 @@
             this.Controls.Add(this.btnIndicUSB);
             this.Controls.Add(this.btnIndicEthernet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);

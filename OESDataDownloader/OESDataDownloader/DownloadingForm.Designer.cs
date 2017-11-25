@@ -32,6 +32,7 @@
             this.pbDownloading = new System.Windows.Forms.ProgressBar();
             this.lbDownload = new System.Windows.Forms.Label();
             this.btnAbort = new System.Windows.Forms.Button();
+            this.lbBytesReceived = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pbDownloading
@@ -51,10 +52,16 @@
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
             // 
+            // lbBytesReceived
+            // 
+            resources.ApplyResources(this.lbBytesReceived, "lbBytesReceived");
+            this.lbBytesReceived.Name = "lbBytesReceived";
+            // 
             // DownloadingForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lbBytesReceived);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.lbDownload);
             this.Controls.Add(this.pbDownloading);
@@ -73,5 +80,6 @@
         private System.Windows.Forms.Label lbDownload;
         private System.Windows.Forms.Button btnAbort;
         public System.Windows.Forms.ProgressBar pbDownloading;
+        public System.Windows.Forms.Label lbBytesReceived;
     }
 }
