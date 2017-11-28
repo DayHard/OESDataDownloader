@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -183,15 +182,17 @@ namespace OESDataDownloader
             {
                 var pingReply = _ping.Send(_remoteIp, TimeOut);
                 if (pingReply != null && pingReply.Status == IPStatus.Success)
-
-                btnIndicEthernet.BackColor = Color.GreenYellow;
-                return true;
+                {
+                    btnIndicEthernet.BackColor = Color.GreenYellow;
+                    return true;
+                }
+                AddToOperationsPerfomed("Ошибка пинга STM: TimeOut.");
+                btnIndicEthernet.BackColor = Color.OrangeRed;              
             }
             catch (Exception ex)
             {
-                AddToOperationsPerfomed("Ошибка пинга STM: " + ex.Message);
+                AddToOperationsPerfomed("Ошибка пинга STM: " +ex.Message);
             }
-            btnIndicEthernet.BackColor = Color.OrangeRed;
             return false;
         }
         //Проверка доступности STM
@@ -221,6 +222,7 @@ namespace OESDataDownloader
             try
             {
                 var data = GetAllLaunch();
+                Thread.Sleep(100);
                 if (ToLittleEndian(data, 5, 2) == 0x1506)
                 {
                     for (int i = 1; i <= data[4]; i++)
@@ -235,7 +237,8 @@ namespace OESDataDownloader
                     AddToOperationsPerfomed("Номер прибора: "+ ToLittleEndian(data,0,4));
                     AddToOperationsPerfomed("Количество записанных пусков: " + data[4]);
                 }
-                Thread.Sleep(2000);
+
+                Thread.Sleep(500);
                 var data2 = GetAllDiag();
                 AddToLaunchInfo(ToBigEndian(data2, 2, 2), ToBigEndian(data2,4,4));
                 AddToOperationsPerfomed("Количество записанных диагностик: " + ToBigEndian(data2, 2, 2));
@@ -351,21 +354,27 @@ namespace OESDataDownloader
         {
             if (!_oedIsAvaliable) return;
             var index = listBLaunchInfo.SelectedIndex;
+            var launch = index + 1;
             if (index != -1)
             {
                 dForm.lbBytesReceived.Text = @"0/" + _launchSize[index];
+                dForm.pbDownloading.Value = 0;
                 dForm.pbDownloading.Maximum = _launchSize[index];
+
                 dForm.Show();
+
+                var cancellationTokenSource = new CancellationTokenSource();
+                dForm.CancellationToken = cancellationTokenSource;
 
                 Task.Factory.StartNew(() =>
                 {
-                    var data = GetLaunch(index);
-                    using (var bw = new BinaryWriter(new FileStream(index + ".imi", FileMode.Create)))
+                    var data = GetLaunch(launch);
+                    using (var bw = new BinaryWriter(new FileStream(launch + ".imi", FileMode.OpenOrCreate)))
                     {
                         bw.Write(data);
                     }
-                    AddToSavedInfo(index);
-                });
+                    AddToSavedInfo(launch);
+                }, cancellationTokenSource.Token);
             }
             else MessageBox.Show("Выберите пуск для скачивания!");
         }
@@ -446,6 +455,8 @@ namespace OESDataDownloader
         {
             #region ArrayDefinitions
 
+            // Команда
+            // Скачать пуск номер number (привести к byte)
             var req = new byte[71];
             req[0] = 12;
             //req[1] = 0;
@@ -457,6 +468,8 @@ namespace OESDataDownloader
             req[7] = 6;
             req[8] = (byte)number;
 
+            //Команда
+            // Заполнить буфер (2048 байт)
             var req2 = new byte[71];
             req2[0] = 12;
             //req2[1] = 0;
@@ -466,7 +479,9 @@ namespace OESDataDownloader
             //req2[5] = 0;
             req2[6] = 4;
             req2[7] = 4;
-
+            
+            // Команда
+            // Выдать пакет данных
             var req3 = new byte[7];
             req3[0] = 12;
             //req3[1] = 0;
@@ -476,50 +491,60 @@ namespace OESDataDownloader
             //req3[5] = 0;
             req3[6] = 22;
 
-            var data = new byte[_launchSize[number]];
+            var index = number - 1;
+            var counter = 0;
+            var data = new byte[_launchSize[index]];
+
             for (int i = 0; i < data.Length; i++)
                 data[i] = 0;
-
-            int counter = 0;
             _resiver.Client.ReceiveTimeout = 3000;
 
             #endregion
 
             _sender.Send(req, req.Length, _endPoint);
-            Thread.Sleep(5000);
+            // должно быть 5-6 секунд
+            Thread.Sleep(6000); 
             do
             {
                 _sender.Send(req2, req2.Length, _endPoint);
-                Thread.Sleep(1000);
+                Thread.Sleep(3);
 
+                //!!!! Должно быть 16
                 for (int i = 0; i < 2; i++)
                 {
                     _sender.Send(req3, req3.Length, _endPoint);
-
-                   var rdata = _resiver.Receive(ref _remoteIpEndPoint);
-
-                    for (int j = 6; j < rdata.Length; j++)
+                    try
                     {
-                        data[counter] = rdata[j];
-                        counter++;
+                        var rdata = _resiver.Receive(ref _remoteIpEndPoint);
+                        for (int j = 7; j < rdata.Length; j++)
+                        {
+                            if (counter == data.Length) break;
+                        
+                            data[counter] = rdata[j];
+                            counter++;
+                        }
+                    }
+                    catch (SocketException)
+                    {
+                        AddToOperationsPerfomed("Ошибка считывания пуска с ОЕД. TimeOut.");
                     }
 
-                    //Array.Copy(rdata, 7, data, counter, rdata.Length);
-                    //Array.Copy(data,counter,rdata,7, rdata.Length);
-
-                    //counter += rdata.Length - 7;
                     Invoke(new MethodInvoker(delegate
                     {
-                        dForm.pbDownloading.Step = counter;
-                        dForm.pbDownloading.PerformStep();
-                        dForm.lbBytesReceived.Text = counter + @"/" + _launchSize[number];
+                        dForm.pbDownloading.Value = counter;
+                        //dForm.pbDownloading.PerformStep();
+                        dForm.lbBytesReceived.Text = counter + @"/" + _launchSize[index];
                     }));
 
                 }
-            } while (_launchSize[number] < counter);
+            } while (_launchSize[index]> counter);
             return data;
         }
 
         #endregion
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

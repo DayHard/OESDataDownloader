@@ -85,6 +85,7 @@
             resources.ApplyResources(this.btnDeleteAll, "btnDeleteAll");
             this.btnDeleteAll.Name = "btnDeleteAll";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
+            this.btnDeleteAll.Click += new System.EventHandler(this.btnDeleteAll_Click);
             // 
             // btnFormat
             // 
