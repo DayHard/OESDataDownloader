@@ -47,6 +47,7 @@
             this.btnLangFr = new System.Windows.Forms.Button();
             this.btnLangEng = new System.Windows.Forms.Button();
             this.btnProp = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.gbLaunchInfo.SuspendLayout();
             this.gbOperationsPerformed.SuspendLayout();
             this.gbSavedFiles.SuspendLayout();
@@ -173,10 +174,18 @@
             this.btnProp.UseVisualStyleBackColor = true;
             this.btnProp.Click += new System.EventHandler(this.btnProp_Click);
             // 
+            // button1
+            // 
+            resources.ApplyResources(this.button1, "button1");
+            this.button1.Name = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbVersion);
             this.Controls.Add(this.lbSavedFilePath);
             this.Controls.Add(this.gbSavedFiles);
@@ -226,6 +235,7 @@
         private System.Windows.Forms.ListBox listBOpreationsPerfomed;
         private System.Windows.Forms.ListBox listBLaunchInfo;
         private System.Windows.Forms.ListBox listBSavedInfo;
+        private System.Windows.Forms.Button button1;
     }
 }
 

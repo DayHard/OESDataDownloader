@@ -30,11 +30,11 @@ namespace OESDataDownloader
         private bool _oedIsAvaliable;
 
 
-        private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0 };
+        private readonly byte[] _comGetStatus = { 10, 0, 1, 0, 0, 0, 0, 0 };
         private const int RemotePort = 3001;
-        //private readonly byte[] _comGetStatus = { 10, 0, 0, 0, 1, 0, 0, 1 };
+        //private readonly byte[] _comGetStatus = { 10, 1, 0, 0, 0, 0, 0, 0 };
         //private const int RemotePort = 3000;
-        private const int TimeOut = 10;
+        private const int TimeOut = 100;
         private const int LocalPort = 3000;
         private const int ConnectionRetry = 1000;
 
@@ -48,7 +48,7 @@ namespace OESDataDownloader
             _endPoint = new IPEndPoint(IPAddress.Parse(_remoteIp), RemotePort);
             _ping = new Ping();
             _sender = new UdpClient();
-            _resiver = new UdpClient(LocalPort) {Client = {ReceiveTimeout = TimeOut}};
+            _resiver = new UdpClient(LocalPort) {Client = {ReceiveTimeout = TimeOut, DontFragment = false}};
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
@@ -200,10 +200,16 @@ namespace OESDataDownloader
         {
             try
             {
+                // Если буфер приема не пустой, очищаем
+                if (_resiver.Available > 0)
+                {
+                   _resiver.Receive(ref _remoteIpEndPoint);
+                }
+
                 _sender.Send(_comGetStatus, _comGetStatus.Length, _endPoint);
                 var resp = _resiver.Receive(ref _remoteIpEndPoint);
                 //Проверка доступности ОЕД 
-                if (resp[0] == 10 && resp[7] == 1)
+                if (resp[0] == 10 && resp[2] == 1 && resp[8] == 1)
                 {
                     btnIndicUSB.BackColor = Color.GreenYellow;
                     return true;
@@ -221,8 +227,10 @@ namespace OESDataDownloader
         {
             try
             {
-                var data = GetAllLaunch();
-                Thread.Sleep(100);
+                var data = GetAllInfo();
+                if (data == null)
+                    return false;
+
                 if (ToLittleEndian(data, 5, 2) == 0x1506)
                 {
                     for (int i = 1; i <= data[4]; i++)
@@ -238,10 +246,12 @@ namespace OESDataDownloader
                     AddToOperationsPerfomed("Количество записанных пусков: " + data[4]);
                 }
 
-                Thread.Sleep(500);
-                var data2 = GetAllDiag();
-                AddToLaunchInfo(ToBigEndian(data2, 2, 2), ToBigEndian(data2,4,4));
-                AddToOperationsPerfomed("Количество записанных диагностик: " + ToBigEndian(data2, 2, 2));
+                if (ToBigEndian(data, 2 + 128, 2) != 0 && ToBigEndian(data, 4 + 128, 4) != 0)
+                {
+                     AddToLaunchInfo(ToBigEndian(data, 2 + 128, 2), ToBigEndian(data, 4 + 128, 4));
+                     AddToOperationsPerfomed("Количество записанных диагностик: " + ToBigEndian(data, 2 + 128, 2));
+                }
+
                 btnIndicOed.BackColor = Color.GreenYellow;
                 return true;
             }
@@ -249,6 +259,10 @@ namespace OESDataDownloader
             {
                 AddToOperationsPerfomed("ОЕД не вернул список пусков. TimeOut.");
             }
+            Invoke(new MethodInvoker(delegate
+            {
+                listBLaunchInfo.Items.Clear();
+            }));
             btnIndicOed.BackColor = Color.OrangeRed;
             return false;
         }
@@ -385,50 +399,15 @@ namespace OESDataDownloader
         /// Отправка запроса на получение всех пусков из ОЕД
         /// </summary>
         /// <returns>Ответ ОЕД</returns>
-        private byte[] GetAllLaunch()
+        private byte[] GetAllInfo()
         {   
             // Формирование команды получения всех пусков
-            var request = new byte[71];
+            var request = new byte[8];
             request[0] = 12;// ОЭД
             request[2] = 1;
-            request[4] = 2;
-            request[7] = 5;
 
             // Очистка буфера приема UDP
-            if (_resiver.Available > 1)
-            {
-                _resiver.Receive(ref _remoteIpEndPoint);
-            }
-
-
-            _sender.Send(request, request.Length, _endPoint);
-            var receivedData = _resiver.Receive(ref _remoteIpEndPoint);
-
-            var data = new byte[128];
-            //Array.Copy(receivedData, 7, data, 0, receivedData.Length);
-
-            for (int i = 0; i < receivedData.Length - 7; i++)
-            {
-                data[i] = receivedData[i + 7];
-            }
-            return data;
-        }
-
-        /// <summary>
-        /// Отправка запроса на получение информации о диагностике
-        /// </summary>
-        /// <returns>Ответ ОЭД</returns>
-        private byte[] GetAllDiag()
-        {
-            // Формирование команды получения всех пусков
-            var request = new byte[71];
-            request[0] = 12;// ОЭД
-            request[2] = 1;
-            request[4] = 1;
-            request[7] = 16;
-
-            // Очистка буфера приема UDP
-            if (_resiver.Available > 1)
+            if (_resiver.Available > 0)
             {
                 _resiver.Receive(ref _remoteIpEndPoint);
             }
@@ -436,15 +415,44 @@ namespace OESDataDownloader
             _sender.Send(request, request.Length, _endPoint);
             var receivedData = _resiver.Receive(ref _remoteIpEndPoint);
 
-            var data = new byte[128];
-            //Array.Copy(receivedData, 7, data, 0, data.Length);
-            //Array.Copy(rdata, 7, data, counter, rdata.Length);
-            for (int i = 0; i < receivedData.Length - 7; i++)
-            {
-                data[i] = receivedData[i + 7];
-            }
+            if (receivedData.Length != 200)
+                return null;
+
+            var data = new byte[receivedData.Length - 8];
+            Array.Copy(receivedData, 8, data, 0, data.Length);
+
             return data;
         }
+
+        ///// <summary>
+        ///// Отправка запроса на получение информации о диагностике
+        ///// </summary>
+        ///// <returns>Ответ ОЭД</returns>
+        //private byte[] GetAllDiag()
+        //{
+        //    // Формирование команды получения всех пусков
+        //    var request = new byte[8];
+        //    request[0] = 12;// ОЭД
+        //    request[2] = 1;
+
+        //    // Очистка буфера приема UDP
+        //    if (_resiver.Available > 1)
+        //    {
+        //        _resiver.Receive(ref _remoteIpEndPoint);
+        //    }
+
+        //    _sender.Send(request, request.Length, _endPoint);
+        //    var receivedData = _resiver.Receive(ref _remoteIpEndPoint);
+
+        //    var data = new byte[128];
+        //    //Array.Copy(receivedData, 7, data, 0, data.Length);
+        //    //Array.Copy(rdata, 7, data, counter, rdata.Length);
+        //    for (int i = 0; i < receivedData.Length - 7; i++)
+        //    {
+        //        data[i] = receivedData[i + 7];
+        //    }
+        //    return data;
+        //}
 
         /// <summary>
         /// Запрос на получение пуска
@@ -452,6 +460,93 @@ namespace OESDataDownloader
         /// <param name="number">Номер пуска</param>
         /// <returns></returns>
         private byte[] GetLaunch(int number)
+        {
+            #region ArrayDefinitions
+
+            // Команда
+            // Скачать пуск номер number (привести к byte)
+            var preplaunch = new byte[8];
+            preplaunch[0] = 12;
+            preplaunch[2] = 2;
+            preplaunch[7] = (byte) number;
+
+            // Команда
+            // Заполнить 2к буффер
+            //(прием по 1024 в 2 части)
+            var fill2Kbuff = new byte[8];
+            fill2Kbuff[0] = 12;
+            fill2Kbuff[2] = 3;
+
+            var index = number - 1;
+            var counter = 0;
+            var data = new byte[_launchSize[index]];
+            // Инициализируем массив приема нулями
+            for (int i = 0; i < data.Length; i++)
+                data[i] = 0;
+            // Таймаут приема UDP
+            _resiver.Client.ReceiveTimeout = 3000;
+
+            // Очистка буфера приема UDP
+            if (_resiver.Available > 0)
+            {
+                _resiver.Receive(ref _remoteIpEndPoint);
+            }
+            #endregion
+
+            _sender.Send(preplaunch, preplaunch.Length, _endPoint);
+            // Ожидание считывания информации о пуске во Флэш память ОЭД
+            Thread.Sleep(10_000); 
+            do
+            {
+                _sender.Send(fill2Kbuff, fill2Kbuff.Length, _endPoint);
+                Thread.Sleep(4);
+                {
+                    try
+                    {
+                        for (int i = 0; i < 2; i++)
+                        {
+                            var rdata = _resiver.Receive(ref _remoteIpEndPoint);
+                            if (data.Length - counter >= 1024)
+                            {
+                                Array.Copy(rdata, 8, data, counter, rdata.Length - 8);
+                                counter += rdata.Length - 8;
+                            }
+                            else
+                            {
+                                Array.Copy(rdata, 8, data, counter, data.Length - counter);
+                                counter += data.Length - counter;
+                            }
+                        }
+                    }
+                    catch (SocketException)
+                    {
+                        AddToOperationsPerfomed("Ошибка считывания пуска с ОЕД. TimeOut.");
+                    }
+
+                    Invoke(new MethodInvoker(delegate
+                    {
+                        dForm.pbDownloading.Value = counter;
+                        dForm.lbBytesReceived.Text = counter + @"/" + _launchSize[index];
+                    }));
+
+                }
+            } while (_launchSize[index]> counter);
+
+            // Скрываем форму загрузки
+            Invoke(new MethodInvoker(delegate
+            {
+                dForm.Hide();
+            }));
+            return data;
+        }
+
+        #endregion
+
+        private void btnDeleteAll_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             #region ArrayDefinitions
 
@@ -466,7 +561,7 @@ namespace OESDataDownloader
             //req[5] = 0;
             req[6] = 6;
             req[7] = 6;
-            req[8] = (byte)number;
+            req[8] = (byte)1;
 
             //Команда
             // Заполнить буфер (2048 байт)
@@ -479,7 +574,7 @@ namespace OESDataDownloader
             //req2[5] = 0;
             req2[6] = 4;
             req2[7] = 4;
-            
+
             // Команда
             // Выдать пакет данных
             var req3 = new byte[7];
@@ -487,64 +582,21 @@ namespace OESDataDownloader
             //req3[1] = 0;
             //req3[2] = 0;
             //req3[3] = 0;
-            req3[4] = 16;
+            req3[4] = 32;
             //req3[5] = 0;
             req3[6] = 22;
 
-            var index = number - 1;
-            var counter = 0;
-            var data = new byte[_launchSize[index]];
-
-            for (int i = 0; i < data.Length; i++)
-                data[i] = 0;
-            _resiver.Client.ReceiveTimeout = 3000;
-
             #endregion
 
-            _sender.Send(req, req.Length, _endPoint);
+             _sender.Send(req, req.Length, _endPoint);
             // должно быть 5-6 секунд
-            Thread.Sleep(6000); 
-            do
-            {
-                _sender.Send(req2, req2.Length, _endPoint);
-                Thread.Sleep(3);
+            Thread.Sleep(6000);
+            _sender.Send(req2, req2.Length, _endPoint);
+             _sender.Send(req3, req3.Length, _endPoint);
 
-                //!!!! Должно быть 16
-                for (int i = 0; i < 2; i++)
-                {
-                    _sender.Send(req3, req3.Length, _endPoint);
-                    try
-                    {
-                        var rdata = _resiver.Receive(ref _remoteIpEndPoint);
-                        for (int j = 7; j < rdata.Length; j++)
-                        {
-                            if (counter == data.Length) break;
-                        
-                            data[counter] = rdata[j];
-                            counter++;
-                        }
-                    }
-                    catch (SocketException)
-                    {
-                        AddToOperationsPerfomed("Ошибка считывания пуска с ОЕД. TimeOut.");
-                    }
+            _resiver.Client.ReceiveTimeout = 0;
+            var data123123 = _resiver.Receive(ref _remoteIpEndPoint);
 
-                    Invoke(new MethodInvoker(delegate
-                    {
-                        dForm.pbDownloading.Value = counter;
-                        //dForm.pbDownloading.PerformStep();
-                        dForm.lbBytesReceived.Text = counter + @"/" + _launchSize[index];
-                    }));
-
-                }
-            } while (_launchSize[index]> counter);
-            return data;
-        }
-
-        #endregion
-
-        private void btnDeleteAll_Click(object sender, EventArgs e)
-        {
         }
     }
 }
